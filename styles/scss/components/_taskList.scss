@@ -12,18 +12,17 @@
     border: 1px solid $border-color;
     border-radius: 4px;
     background-color: white;
-    transition: background-color 0.3s ease; // Smooth transition for hover effect
+    transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: lighten($border-color, 40%); // Change background color on hover
+      background-color: lighten($border-color, 40%);
     }
 
     input[type="checkbox"] {
       margin-right: $spacing-unit;
 
-      // Apply styles when checked
       &:checked+span {
-        color: $primary-color; // Change text color for completed tasks
+        color: $muted-color;
         text-decoration: line-through;
       }
     }
@@ -39,13 +38,6 @@
 
     button {
       @include button-style($secondary-color, white);
-      padding: $spacing-unit;
-      border-radius: 4px;
-      cursor: pointer;
-
-      &:hover {
-        background-color: darken($secondary-color, 10%);
-      }
     }
   }
 }

@@ -95,6 +95,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
+  user-select: none;
 }
 
 .container {
@@ -104,17 +105,23 @@ body {
 }
 
 .divider {
-  width: 50%;
+  width: 35vw;
   height: 2px;
-  background-color: #ddd;
-  margin: 8px auto;
+  background-color: #888;
+  margin: 16px auto;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  margin: 0;
 }
 
 #hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   text-align: center;
   background-color: #4caf50;
   color: white;
@@ -142,7 +149,7 @@ body {
   background-color: #4caf50;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 8px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -169,7 +176,7 @@ body {
   margin-right: 8px;
 }
 #task-list-container li input[type=checkbox]:checked + span {
-  color: #4caf50;
+  color: #888;
   text-decoration: line-through;
 }
 #task-list-container li span {
@@ -183,16 +190,10 @@ body {
   background-color: #ff9800;
   color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
   padding: 8px;
   border-radius: 4px;
   cursor: pointer;
-}
-#task-list-container li button:hover {
-  background-color: rgb(204, 121.6, 0);
+  transition: background-color 0.3s;
 }
 #task-list-container li button:hover {
   background-color: rgb(204, 121.6, 0);

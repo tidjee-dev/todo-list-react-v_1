@@ -13,6 +13,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
+  user-select: none;
 }
 
 .container {
@@ -22,8 +23,18 @@ body {
 }
 
 .divider {
-  width: 50%;
+  width: 35vw;
   height: 2px;
-  background-color: $border-color;
-  margin: $spacing-unit auto;
+  background-color: $muted-color;
+  margin: $spacing-unit * 2 auto;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: $spacing-unit;
+}
+
+p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  margin: 0;
 }

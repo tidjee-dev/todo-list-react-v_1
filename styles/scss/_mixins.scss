@@ -1,16 +1,10 @@
 @use 'variables' as *;
 
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @mixin button-style($bg-color, $text-color) {
   background-color: $bg-color;
   color: $text-color;
   border: none;
-  padding: $spacing-unit $spacing-unit * 2;
+  padding: $spacing-unit;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
