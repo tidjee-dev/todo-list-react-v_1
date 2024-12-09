@@ -1,0 +1,51 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+#task-list-container {
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-unit;
+    margin-bottom: $spacing-unit;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    background-color: white;
+    transition: background-color 0.3s ease; // Smooth transition for hover effect
+
+    &:hover {
+      background-color: lighten($border-color, 40%); // Change background color on hover
+    }
+
+    input[type="checkbox"] {
+      margin-right: $spacing-unit;
+
+      // Apply styles when checked
+      &:checked+span {
+        color: $primary-color; // Change text color for completed tasks
+        text-decoration: line-through;
+      }
+    }
+
+    span {
+      color: $text-color;
+
+      &.completed {
+        color: gray;
+        text-decoration: line-through;
+      }
+    }
+
+    button {
+      @include button-style($secondary-color, white);
+      padding: $spacing-unit;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+  }
+}

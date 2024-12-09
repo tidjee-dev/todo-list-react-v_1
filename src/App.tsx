@@ -1,36 +1,66 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { useEffect, useState } from "react";
+import Hero from "./components/Hero/Hero";
+import Input from "./components/Input/Input";
+import TaskList from "./components/TaskList/TaskList";
 
-function App() {
-  const [count, setCount] = useState(0);
+interface Task {
+  id: number;
+  text: string;
+  completed: boolean;
+}
+
+const App: React.FC = () => {
+  const [tasks, setTasks] = useState<Task[]>(() => {
+    const storedTasks = localStorage.getItem("tasks");
+    return storedTasks ? JSON.parse(storedTasks) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  const addTask = (taskText: string) => {
+    const newTask: Task = {
+      id: Date.now(),
+      text: taskText,
+      completed: false,
+    };
+    setTasks((prevTasks) => sortTasks([...prevTasks, newTask]));
+  };
+
+  const toggleTask = (id: number) => {
+    setTasks((prevTasks) =>
+      sortTasks(
+        prevTasks.map((task) =>
+          task.id === id ? { ...task, completed: !task.completed } : task
+        )
+      )
+    );
+  };
+
+  const removeTask = (id: number) => {
+    setTasks((prevTasks) =>
+      sortTasks(prevTasks.filter((task) => task.id !== id))
+    );
+  };
+
+  const sortTasks = (tasks: Task[]) => {
+    return tasks.sort((a, b) => {
+      if (a.completed !== b.completed) {
+        return a.completed ? 1 : -1;
+      }
+      return a.text.localeCompare(b.text);
+    });
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>My First React App using Vite and TypeScript</h1>
-      <h2>Learn React @ BeCode</h2>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <Hero />
+      <Input addTask={addTask} />
+      <hr className="container divider" />
+      <TaskList tasks={tasks} toggleTask={toggleTask} removeTask={removeTask} />
+    </div>
   );
-}
+};
 
 export default App;

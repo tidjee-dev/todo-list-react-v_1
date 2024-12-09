@@ -1,0 +1,22 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+#input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-unit;
+  margin: $spacing-unit auto;
+
+  input[type="text"] {
+    flex: 1;
+    padding: $spacing-unit;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    font-size: $font-size-base;
+  }
+
+  button {
+    @include button-style($primary-color, white);
+  }
+}

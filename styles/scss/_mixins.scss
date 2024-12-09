@@ -1,0 +1,41 @@
+@use 'variables' as *;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-style($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  padding: $spacing-unit $spacing-unit * 2;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint ==sm {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==md {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==lg {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+}

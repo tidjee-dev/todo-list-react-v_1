@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  cursor: pointer;
+}
+
+input[type=checkbox]:disabled,
+input[type=radio]:disabled,
+button:disabled,
+input[type=checkbox]:disabled:checked,
+input[type=radio]:disabled:checked {
+  cursor: not-allowed;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.divider {
+  width: 50%;
+  height: 2px;
+  background-color: #ddd;
+  margin: 8px auto;
+}
+
+#hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: #4caf50;
+  color: white;
+  padding: 32px;
+}
+#hero h1 {
+  font-size: 2rem;
+}
+
+#input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 8px auto;
+}
+#input-container input[type=text] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+#input-container button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#input-container button:hover {
+  background-color: rgb(60.5577689243, 139.4422310757, 63.7450199203);
+}
+
+#task-list-container li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+#task-list-container li:hover {
+  background-color: white;
+}
+#task-list-container li input[type=checkbox] {
+  margin-right: 8px;
+}
+#task-list-container li input[type=checkbox]:checked + span {
+  color: #4caf50;
+  text-decoration: line-through;
+}
+#task-list-container li span {
+  color: #333;
+}
+#task-list-container li span.completed {
+  color: gray;
+  text-decoration: line-through;
+}
+#task-list-container li button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#task-list-container li button:hover {
+  background-color: rgb(204, 121.6, 0);
+}
+#task-list-container li button:hover {
+  background-color: rgb(204, 121.6, 0);
+}
+
+/*# sourceMappingURL=styles.css.map */

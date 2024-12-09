@@ -1,0 +1,15 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+#hero {
+  @include flex-center;
+  flex-direction: column;
+  text-align: center;
+  background-color: $primary-color;
+  color: white;
+  padding: $spacing-unit * 4;
+
+  h1 {
+    font-size: 2rem;
+  }
+}
