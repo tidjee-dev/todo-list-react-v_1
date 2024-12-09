@@ -23,7 +23,7 @@ const Input: React.FC<InputProps> = ({ addTask }) => {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <button type="button" onClick={handleAddTask}>
-        Add Task
+        Add
       </button>
     </div>
   );
