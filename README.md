@@ -1,4 +1,4 @@
-# Todo List using Vite + React + TS
+# Tidjee's Todo List v1
 
 ## Description
 
