@@ -21,6 +21,7 @@ const Input: React.FC<InputProps> = ({ addTask }) => {
         placeholder="Add a task ..."
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && handleAddTask()}
       />
       <button type="button" onClick={handleAddTask}>
         Add
